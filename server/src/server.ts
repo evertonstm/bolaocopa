@@ -10,6 +10,8 @@ async function bootstrap() {
         logger: true,
     })
 
+    bootstrap()
+    
     fastify.get('/pools/count', async () => {
         const pools = await prisma.pool.findMany({
             where: {
